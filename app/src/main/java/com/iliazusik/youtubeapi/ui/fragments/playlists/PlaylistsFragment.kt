@@ -22,7 +22,7 @@ class PlaylistsFragment :
                 PlaylistsFragmentDirections.actionPlaylistsFragmentToPlaylistItemFragment(
                     playlistId = it.id,
                     playlistTitle = it.snippet.title,
-                    playlistDesc = it.snippet.description
+                    playlistDesc = it.snippet.localized.description
                 )
             )
         }
