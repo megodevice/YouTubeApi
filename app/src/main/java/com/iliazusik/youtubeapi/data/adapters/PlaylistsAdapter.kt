@@ -37,11 +37,11 @@ class PlaylistsAdapter : ListAdapter<Item, PlaylistsAdapter.ItemPlaylistViewHold
         )
     }
 
-    fun setOnItemClickListener(onClick: (String) -> Unit) {
+    fun setOnItemClickListener(onClick: (Item) -> Unit) {
         onItemClick = onClick
     }
 
-    private var onItemClick: ((String) -> Unit)? = null
+    private var onItemClick: ((Item) -> Unit)? = null
 
     inner class ItemPlaylistViewHolder(private val binding: ItemPlaylistBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -49,7 +49,7 @@ class PlaylistsAdapter : ListAdapter<Item, PlaylistsAdapter.ItemPlaylistViewHold
         fun onBind(item: Item) {
             binding.root.setOnClickListener {
                 onItemClick?.let { onItemClick ->
-                    onItemClick(item.id)
+                    onItemClick(item)
                 }
             }
             binding.apply {

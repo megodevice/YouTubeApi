@@ -1,5 +1,6 @@
 package com.iliazusik.youtubeapi.data.api
 
+import com.iliazusik.youtubeapi.data.models.PlaylistItemModel
 import com.iliazusik.youtubeapi.data.models.PlaylistsModel
 import retrofit2.Response
 import retrofit2.http.GET
@@ -13,4 +14,11 @@ interface YouTubeApiService {
         @Query("part") part: String,
         @Query("maxResults") maxResults: Int
     ) : Response<PlaylistsModel>
+
+    @GET("playlistItems/")
+    suspend fun fetchPlaylistItem(
+        @Query("part") part: String,
+        @Query("playlistId") playlistId: String,
+        @Query("maxResults") maxResults: Int
+    ) : Response<PlaylistItemModel>
 }

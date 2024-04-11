@@ -7,5 +7,7 @@ class PlaylistItemViewModel(
     private val repository: PlaylistItemRepository
 ): ViewModel() {
 
+    fun getPlaylistItems(id: String) =
+        repository.fetchPlaylistItem(id)
 
 }

@@ -9,6 +9,22 @@
         android:id="@+id/playlistsFragment"
         android:name="com.iliazusik.youtubeapi.ui.fragments.playlists.PlaylistsFragment"
         android:label="fragment_playlists"
-        tools:layout="@layout/fragment_playlists" />
+        tools:layout="@layout/fragment_playlists">
+        <action
+            android:id="@+id/action_playlistsFragment_to_playlistItemFragment"
+            app:destination="@id/playlistItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playlistItemFragment"
+        android:name="com.iliazusik.youtubeapi.ui.fragments.playlistitem.PlaylistItemFragment"
+        android:label="fragment_playlist_item"
+        tools:layout="@layout/fragment_playlist_item">
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="playlistId"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
