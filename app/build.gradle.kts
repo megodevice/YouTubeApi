@@ -92,4 +92,7 @@ dependencies {
 
     // coroutines
     implementation(libs.kotlinx.coroutines.android)
+
+    // material
+    implementation(libs.material.v120)
 }

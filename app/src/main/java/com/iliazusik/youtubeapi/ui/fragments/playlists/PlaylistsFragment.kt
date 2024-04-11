@@ -21,7 +21,8 @@ class PlaylistsFragment :
             findNavController().navigate(
                 PlaylistsFragmentDirections.actionPlaylistsFragmentToPlaylistItemFragment(
                     playlistId = it.id,
-                    imageUrl = it.snippet.thumbnails.maxres.url
+                    playlistTitle = it.snippet.title,
+                    playlistDesc = it.snippet.description
                 )
             )
         }

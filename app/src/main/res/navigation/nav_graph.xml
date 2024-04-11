@@ -20,7 +20,10 @@
         android:label="fragment_playlist_item"
         tools:layout="@layout/fragment_playlist_item">
         <argument
-            android:name="imageUrl"
+            android:name="playlistDesc"
+            app:argType="string" />
+        <argument
+            android:name="playlistTitle"
             app:argType="string" />
         <argument
             android:name="playlistId"
