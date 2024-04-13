@@ -28,6 +28,26 @@
         <argument
             android:name="playlistId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_playlistItemFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.iliazusik.youtubeapi.ui.fragments.video.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video">
+
+        <argument
+            android:name="videoDesc"
+            app:argType="string" />
+        <argument
+            android:name="videoTitle"
+            app:argType="string" />
+        <argument
+            android:name="videoId"
+            app:argType="string" />
+
     </fragment>
 
 </navigation>

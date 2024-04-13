@@ -1,6 +1,7 @@
 package com.iliazusik.youtubeapi.ui.fragments.playlistitem
 
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.youtubeapi.databinding.FragmentPlaylistItemBinding
 import com.iliazusik.youtubeapi.ui.adapters.PlaylistsVideosAdapter
@@ -25,6 +26,15 @@ class PlaylistItemFragment : BaseFragment<
         tvPlaylistDesc.text = args.playlistDesc
         rvVideos.adapter = adapter
         viewModel.setupPlaylistId(args.playlistId)
+        adapter.setOnItemClickListener { video ->
+            findNavController().navigate(
+                PlaylistItemFragmentDirections.actionPlaylistItemFragmentToVideoFragment(
+                    videoDesc = video.snippet.description,
+                    videoTitle = video.snippet.title,
+                    videoId = video.id
+                )
+            )
+        }
     }
 
     override fun observe() {
