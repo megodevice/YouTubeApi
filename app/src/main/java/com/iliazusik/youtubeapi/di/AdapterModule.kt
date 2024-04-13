@@ -1,11 +1,11 @@
 package com.iliazusik.youtubeapi.di
 
-import com.iliazusik.youtubeapi.data.adapters.PlaylistsAdapter
+import com.iliazusik.youtubeapi.ui.adapters.PlaylistsVideosAdapter
 import org.koin.dsl.module
 
 val adapterModule = module {
-    single { providePlaylistsAdapter() }
+    factory { providePlaylistsAdapter() }
 }
 
 fun providePlaylistsAdapter() =
-    PlaylistsAdapter()
+    PlaylistsVideosAdapter()

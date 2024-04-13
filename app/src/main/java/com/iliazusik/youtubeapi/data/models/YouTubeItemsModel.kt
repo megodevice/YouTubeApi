@@ -1,6 +1,6 @@
 package com.iliazusik.youtubeapi.data.models
 
-data class PlaylistsModel(
+data class YouTubeItemsModel(
     val etag: String,
     val items: List<Item>,
     val kind: String,
@@ -23,17 +23,29 @@ data class PageInfo(
 )
 
 data class ContentDetails(
-    val itemCount: Int
+    val itemCount: Int?,
+    val videoId: String?,
+    val videoPublishedAt: String?
 )
 
 data class Snippet(
     val channelId: String,
     val channelTitle: String,
     val description: String,
-    val localized: Localized,
+    val localized: Localized?,
     val publishedAt: String,
     val thumbnails: Thumbnails,
-    val title: String
+    val title: String,
+    val playlistId: String?,
+    val position: Int?,
+    val resourceId: ResourceId?,
+    val videoOwnerChannelId: String?,
+    val videoOwnerChannelTitle: String?
+)
+
+data class ResourceId(
+    val kind: String,
+    val videoId: String
 )
 
 data class Localized(
@@ -42,38 +54,14 @@ data class Localized(
 )
 
 data class Thumbnails(
-    val default: Default,
-    val high: High,
-    val maxres: Maxres,
-    val medium: Medium,
-    val standard: Standard
+    val default: Thumbnail?,
+    val high: Thumbnail?,
+    val maxres: Thumbnail?,
+    val medium: Thumbnail?,
+    val standard: Thumbnail?
 )
 
-data class Default(
-    val height: Int,
-    val url: String,
-    val width: Int
-)
-
-data class High(
-    val height: Int,
-    val url: String,
-    val width: Int
-)
-
-data class Maxres(
-    val height: Int,
-    val url: String,
-    val width: Int
-)
-
-data class Medium(
-    val height: Int,
-    val url: String,
-    val width: Int
-)
-
-data class Standard(
+data class Thumbnail(
     val height: Int,
     val url: String,
     val width: Int

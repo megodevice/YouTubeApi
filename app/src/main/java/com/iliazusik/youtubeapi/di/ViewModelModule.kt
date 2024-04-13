@@ -1,7 +1,7 @@
 package com.iliazusik.youtubeapi.di
 
-import com.iliazusik.youtubeapi.data.repository.PlaylistItemRepository
-import com.iliazusik.youtubeapi.data.repository.PlaylistsRepository
+import com.iliazusik.youtubeapi.data.api.YouTubeApiService
+import com.iliazusik.youtubeapi.data.paging.YouTubePlaylistsSource
 import com.iliazusik.youtubeapi.ui.viewmodels.PlaylistItemViewModel
 import com.iliazusik.youtubeapi.ui.viewmodels.PlaylistsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,8 +12,8 @@ val viewModelModule = module {
     viewModel<PlaylistItemViewModel> { providePlaylistItemViewModel(get()) }
 }
 
-fun providePlaylistsViewModel(repository: PlaylistsRepository) =
-    PlaylistsViewModel(repository)
+fun providePlaylistsViewModel(youTubePagingSource: YouTubePlaylistsSource) =
+    PlaylistsViewModel(youTubePagingSource)
 
-fun providePlaylistItemViewModel(repository: PlaylistItemRepository) =
-    PlaylistItemViewModel(repository)
+fun providePlaylistItemViewModel(apiService: YouTubeApiService) =
+    PlaylistItemViewModel(apiService)
