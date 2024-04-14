@@ -95,4 +95,7 @@ dependencies {
 
     // material
     implementation(libs.material.v120)
+
+    // YT player
+    implementation(libs.core)
 }

@@ -31,7 +31,7 @@ class PlaylistItemFragment : BaseFragment<
                 PlaylistItemFragmentDirections.actionPlaylistItemFragmentToVideoFragment(
                     videoDesc = video.snippet.description,
                     videoTitle = video.snippet.title,
-                    videoId = video.id
+                    videoId = video.contentDetails.videoId!!
                 )
             )
         }
